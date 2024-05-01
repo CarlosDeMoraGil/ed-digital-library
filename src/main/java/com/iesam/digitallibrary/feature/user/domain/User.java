@@ -1,4 +1,4 @@
-package com.iesam.digitalLibrary.feature.user.domain;
+package com.iesam.digitallibrary.feature.user.domain;
 
 import java.io.Serializable;
 

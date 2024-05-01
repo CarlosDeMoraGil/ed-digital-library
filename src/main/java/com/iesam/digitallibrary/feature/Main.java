@@ -1,6 +1,6 @@
-package com.iesam.digitalLibrary.feature;
+package com.iesam.digitallibrary.feature;
 
-import com.iesam.digitalLibrary.feature.user.presentation.UserMain;
+import com.iesam.digitallibrary.feature.user.presentation.UserMain;
 
 import java.util.Scanner;
 

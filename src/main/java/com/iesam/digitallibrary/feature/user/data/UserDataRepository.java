@@ -1,8 +1,8 @@
-package com.iesam.digitalLibrary.feature.user.data;
+package com.iesam.digitallibrary.feature.user.data;
 
-import com.iesam.digitalLibrary.feature.user.data.local.UserFileLocalDataSource;
-import com.iesam.digitalLibrary.feature.user.domain.User;
-import com.iesam.digitalLibrary.feature.user.domain.UserRepository;
+import com.iesam.digitallibrary.feature.user.data.local.UserFileLocalDataSource;
+import com.iesam.digitallibrary.feature.user.domain.User;
+import com.iesam.digitallibrary.feature.user.domain.UserRepository;
 
 public class UserDataRepository implements UserRepository {
 
