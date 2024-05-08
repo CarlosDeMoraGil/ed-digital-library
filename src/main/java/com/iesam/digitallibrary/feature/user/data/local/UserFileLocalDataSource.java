@@ -14,6 +14,9 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Scanner;
 
+import static com.iesam.digitallibrary.feature.user.presentation.UserMain.addUser;
+import static com.iesam.digitallibrary.feature.user.presentation.UserMain.modifyUser;
+
 public class UserFileLocalDataSource {
     private String nameFile = "users.txt";
 
@@ -88,6 +91,21 @@ public class UserFileLocalDataSource {
             }
         }
         saveList(newList);
+    }
+
+    public void modify(String id, User newUser) {
+        List<User> models = findAll();
+        for (int i = 0; i < models.size(); i++) {
+            User user = models.get(i);
+            if (Objects.equals(user.getId(), id)) {
+                // Reemplazar el usuario antiguo con el nuevo usuario
+                models.set(i, newUser);
+                saveList(models);
+                System.out.println("Usuario modificado correctamente.");
+                return;
+            }
+        }
+        System.out.println("No se encontró ningún usuario con el ID proporcionado.");
     }
 
 }

@@ -19,6 +19,7 @@ public class Main {
             System.out.println("0. Salir");
             System.out.println("1. Añadir Usuario");
             System.out.println("2. Borrar Usuario");
+            System.out.println("3. Modificar Usuario");
 
             System.out.println("Selecciona una opcion: ");
             opcion = sc.nextInt();
@@ -33,6 +34,9 @@ public class Main {
                     UserMain.deleteUser();
                     break;
 
+                case 3:
+                    UserMain.modifyUser();
+                    break;
             }
 
         }
