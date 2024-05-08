@@ -83,4 +83,14 @@ public class UserMain {
 
     }
 
+    public static void getUsers(){
+
+        System.out.println("---USUARIOS REGISTRADOS---");
+
+        GetUsersUseCase getUsersUseCase = new GetUsersUseCase(new UserDataRepository(new UserFileLocalDataSource()));
+        getUsersUseCase.execeute();
+
+    }
+
+
 }

@@ -29,5 +29,10 @@ public class UserDataRepository implements UserRepository {
         userFileLocalDataSource.modify(id, user);
     }
 
+    @Override
+    public void getUsers() {
+        userFileLocalDataSource.getAll();
+    }
+
 
 }

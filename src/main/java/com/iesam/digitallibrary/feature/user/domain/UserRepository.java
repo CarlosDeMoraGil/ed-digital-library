@@ -6,4 +6,7 @@ public interface UserRepository {
     void deleteUser(String id);
     void modifyUser(String id, User user);
 
+    void getUsers();
+
+
 }
