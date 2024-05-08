@@ -38,7 +38,17 @@ public class UserMain {
         CreateUserUserCase createUserUserCase = new CreateUserUserCase( new UserDataRepository(new UserFileLocalDataSource()));
         createUserUserCase.execute(user);
 
-        UserFileLocalDataSource.save(user);
+    }
+
+    public static void deleteUser(){
+
+        System.out.println("---BORRAR USUARIO---");
+        System.out.println("Introduce el ID: ");
+        String id = sc.nextLine();
+
+        DeleteUserUseCase deleteUserUseCase = new DeleteUserUseCase(new UserDataRepository(new UserFileLocalDataSource()));
+        deleteUserUseCase.execute(id);
+
 
     }
 

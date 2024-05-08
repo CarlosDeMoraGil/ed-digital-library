@@ -18,15 +18,19 @@ public class Main {
 
             System.out.println("0. Salir");
             System.out.println("1. Añadir Usuario");
-
+            System.out.println("2. Borrar Usuario");
 
             System.out.println("Selecciona una opcion: ");
             opcion = sc.nextInt();
-
+            
             switch (opcion){
 
                 case 1:
                     UserMain.addUser();
+                    break;
+
+                case 2:
+                    UserMain.deleteUser();
                     break;
 
             }

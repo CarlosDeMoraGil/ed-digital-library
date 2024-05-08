@@ -4,4 +4,7 @@ public interface UserRepository {
 
     void addUser(User user);
 
+    void deleteUser(String id);
+
+
 }
