@@ -1,0 +1,31 @@
+Index: src/main/java/com/iesam/digitallibrary/feature/user/data/UserDataRepository.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.iesam.digitallibrary.feature.user.data;\r\n\r\nimport com.iesam.digitallibrary.feature.user.data.local.UserFileLocalDataSource;\r\nimport com.iesam.digitallibrary.feature.user.domain.User;\r\nimport com.iesam.digitallibrary.feature.user.domain.UserRepository;\r\n\r\nimport java.util.ArrayList;\r\n\r\npublic class UserDataRepository implements UserRepository {\r\n\r\n\r\n    private UserFileLocalDataSource userFileLocalDataSource;\r\n\r\n    public UserDataRepository(UserFileLocalDataSource userFileLocalDataSource) {\r\n        this.userFileLocalDataSource = userFileLocalDataSource;\r\n    }\r\n\r\n\r\n    @Override\r\n    public void addUser(User user) {\r\n        userFileLocalDataSource.save(user);\r\n    }\r\n\r\n    @Override\r\n    public void deleteUser(String id) {\r\n        userFileLocalDataSource.delete(id);\r\n    }\r\n\r\n\r\n}
+===================================================================
+diff --git a/src/main/java/com/iesam/digitallibrary/feature/user/data/UserDataRepository.java b/src/main/java/com/iesam/digitallibrary/feature/user/data/UserDataRepository.java
+--- a/src/main/java/com/iesam/digitallibrary/feature/user/data/UserDataRepository.java	
++++ b/src/main/java/com/iesam/digitallibrary/feature/user/data/UserDataRepository.java	
+@@ -4,7 +4,6 @@
+ import com.iesam.digitallibrary.feature.user.domain.User;
+ import com.iesam.digitallibrary.feature.user.domain.UserRepository;
+ 
+-import java.util.ArrayList;
+ 
+ public class UserDataRepository implements UserRepository {
+ 
+Index: src/main/java/com/iesam/digitallibrary/feature/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.iesam.digitallibrary.feature;\r\n\r\nimport com.iesam.digitallibrary.feature.user.data.local.UserFileLocalDataSource;\r\nimport com.iesam.digitallibrary.feature.user.presentation.UserMain;\r\n\r\nimport java.util.Scanner;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n\r\n        Scanner sc = new Scanner(System.in);\r\n\r\n        int opcion = -1;\r\n\r\n        while(opcion != 0){\r\n\r\n            System.out.println(\" \");\r\n            System.out.println(\"---BIBLIOTECA---\");\r\n\r\n            System.out.println(\"0. Salir\");\r\n            System.out.println(\"1. Añadir Usuario\");\r\n            System.out.println(\"2. Borrar Usuario\");\r\n\r\n            System.out.println(\"Selecciona una opcion: \");\r\n            opcion = sc.nextInt();\r\n            \r\n            switch (opcion){\r\n\r\n                case 1:\r\n                    UserMain.addUser();\r\n                    break;\r\n\r\n                case 2:\r\n                    UserMain.deleteUser();\r\n                    break;\r\n            }\r\n\r\n        }\r\n\r\n    }\r\n}
+===================================================================
+diff --git a/src/main/java/com/iesam/digitallibrary/feature/Main.java b/src/main/java/com/iesam/digitallibrary/feature/Main.java
+--- a/src/main/java/com/iesam/digitallibrary/feature/Main.java	
++++ b/src/main/java/com/iesam/digitallibrary/feature/Main.java	
+@@ -1,6 +1,5 @@
+ package com.iesam.digitallibrary.feature;
+ 
+-import com.iesam.digitallibrary.feature.user.data.local.UserFileLocalDataSource;
+ import com.iesam.digitallibrary.feature.user.presentation.UserMain;
+ 
+ import java.util.Scanner;
