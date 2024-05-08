@@ -49,6 +49,37 @@ public class UserMain {
         DeleteUserUseCase deleteUserUseCase = new DeleteUserUseCase(new UserDataRepository(new UserFileLocalDataSource()));
         deleteUserUseCase.execute(id);
 
+    }
+
+    public static void modifyUser(){
+
+        System.out.println("---MODIFICAR USUARIO---");
+        System.out.println("Introduce el ID: ");
+        String id = sc.nextLine();
+
+        System.out.println("Introduce el nombre: ");
+        String name = sc.nextLine();
+
+        System.out.println("Introduce el apellido: ");
+        String surname = sc.nextLine();
+
+        System.out.println("Introduce la fecha de nacimiento (DD-MM-YYYY): ");
+        String dateBorn = sc.nextLine();
+
+        System.out.println("Introduce el correo electrónico: ");
+        String email = sc.nextLine();
+
+        System.out.println("Introduce la dirección: ");
+        String address = sc.nextLine();
+
+        System.out.println("Introduce el número de teléfono: ");
+        String number = sc.nextLine();
+
+        User user = new User(id, name, surname, dateBorn, email, address, number);
+
+        ModifyUserUseCase modifyUserUseCase = new ModifyUserUseCase(new UserDataRepository(new UserFileLocalDataSource()));
+        modifyUserUseCase.execute(id, user);
+
 
     }
 
