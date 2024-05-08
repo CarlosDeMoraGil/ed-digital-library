@@ -50,7 +50,6 @@ public class UserMain {
         deleteUserUseCase.execute(id);
 
 
-
     }
 
 }

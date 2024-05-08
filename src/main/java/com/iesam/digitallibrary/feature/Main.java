@@ -1,6 +1,5 @@
 package com.iesam.digitallibrary.feature;
 
-import com.iesam.digitallibrary.feature.user.data.local.UserFileLocalDataSource;
 import com.iesam.digitallibrary.feature.user.presentation.UserMain;
 
 import java.util.Scanner;
@@ -33,6 +32,7 @@ public class Main {
                 case 2:
                     UserMain.deleteUser();
                     break;
+
             }
 
         }

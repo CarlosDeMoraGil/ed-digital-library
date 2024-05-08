@@ -4,8 +4,6 @@ import com.iesam.digitallibrary.feature.user.data.local.UserFileLocalDataSource;
 import com.iesam.digitallibrary.feature.user.domain.User;
 import com.iesam.digitallibrary.feature.user.domain.UserRepository;
 
-import java.util.ArrayList;
-
 public class UserDataRepository implements UserRepository {
 
 
@@ -25,6 +23,5 @@ public class UserDataRepository implements UserRepository {
     public void deleteUser(String id) {
         userFileLocalDataSource.delete(id);
     }
-
 
 }

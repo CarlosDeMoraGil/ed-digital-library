@@ -70,6 +70,7 @@ public class UserFileLocalDataSource {
         } catch (FileNotFoundException e) {
             System.out.println("Ha ocurrido un error al obtener el listado.");
             e.printStackTrace();
+
         } catch (IOException e) {
             System.out.println("Ha ocurrido un error al crear el fichero.");
             throw new RuntimeException(e);
@@ -88,4 +89,5 @@ public class UserFileLocalDataSource {
         }
         saveList(newList);
     }
+
 }
