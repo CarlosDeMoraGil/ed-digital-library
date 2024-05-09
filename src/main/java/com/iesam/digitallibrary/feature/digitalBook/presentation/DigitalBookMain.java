@@ -3,6 +3,7 @@ package com.iesam.digitallibrary.feature.digitalBook.presentation;
 import com.iesam.digitallibrary.feature.digitalBook.data.DigitalBookDataRepository;
 import com.iesam.digitallibrary.feature.digitalBook.data.local.DigitalBookFileLocalDataSource;
 import com.iesam.digitallibrary.feature.digitalBook.domain.CreateDigitalBookUseCase;
+import com.iesam.digitallibrary.feature.digitalBook.domain.DeleteDigitalBookUseCase;
 import com.iesam.digitallibrary.feature.digitalBook.domain.DigitalBook;
 
 
@@ -33,6 +34,18 @@ public class DigitalBookMain {
         DigitalBook digitalBook = new DigitalBook(isbn, name, author, publisher, relaseDate);
         CreateDigitalBookUseCase createDigitalBookUseCase = new CreateDigitalBookUseCase(new DigitalBookDataRepository(new DigitalBookFileLocalDataSource()));
         createDigitalBookUseCase.execute(digitalBook);
+
+    }
+
+    public static void deleteDigitalBook(){
+
+        System.out.println("---BORRAR LIBRO---");
+        System.out.println("Introduce el ISBN: ");
+        String isbn = sc.nextLine();
+
+        DeleteDigitalBookUseCase deleteDigitalBookUseCase = new DeleteDigitalBookUseCase(new DigitalBookDataRepository(new DigitalBookFileLocalDataSource()));
+        deleteDigitalBookUseCase.execute(isbn);
+
 
     }
 
