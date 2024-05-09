@@ -81,6 +81,16 @@ public class UserFileLocalDataSource {
         return new ArrayList<>();
     }
 
+    public void getAll() {
+
+        List<User> models = findAll();
+
+        for(User user : models){
+            System.out.println(user.toString());
+        }
+
+    }
+
     public void delete(String modelId) {
         List<User> newList = new ArrayList<>();
         List<User> models = findAll();
