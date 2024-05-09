@@ -33,5 +33,4 @@ public class DigitalBookDataRepository implements DigitalBookRepository {
         digitalBookFileLocalDataSource.getAll();
     }
 
-
 }
