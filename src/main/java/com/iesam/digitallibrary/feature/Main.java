@@ -1,5 +1,6 @@
 package com.iesam.digitallibrary.feature;
 
+import com.iesam.digitallibrary.feature.digitalBook.presentation.DigitalBookMain;
 import com.iesam.digitallibrary.feature.user.presentation.UserMain;
 
 import java.util.Scanner;
@@ -21,6 +22,7 @@ public class Main {
             System.out.println("2. Borrar Usuario");
             System.out.println("3. Modificar Usuario");
             System.out.println("4. Mostrar Usuarios");
+            System.out.println("5. Añadir Libro");
 
             System.out.println("Selecciona una opcion: ");
             opcion = sc.nextInt();
@@ -38,10 +40,15 @@ public class Main {
                 case 3:
                     UserMain.modifyUser();
                     break;
-
+                
                 case 4:
                     UserMain.getUsers();
                     break;
+                
+                case 5:
+                    DigitalBookMain.addDigitalBook();
+                    break;
+
             }
 
         }
