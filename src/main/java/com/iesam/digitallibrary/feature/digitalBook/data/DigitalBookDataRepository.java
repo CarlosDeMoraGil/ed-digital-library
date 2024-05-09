@@ -28,5 +28,9 @@ public class DigitalBookDataRepository implements DigitalBookRepository {
         digitalBookFileLocalDataSource.modify(isbn, digitalBook);
     }
 
+    @Override
+    public void getDigitalBooks() {
+        digitalBookFileLocalDataSource.getAll();
+    }
 
 }

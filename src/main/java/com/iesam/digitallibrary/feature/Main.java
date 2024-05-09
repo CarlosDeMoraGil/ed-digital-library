@@ -25,6 +25,7 @@ public class Main {
             System.out.println("5. Añadir Libro");
             System.out.println("6. Borrar Libro");
             System.out.println("7. Modificar Libro");
+            System.out.println("8. Mostrar Libros");
 
             System.out.println("Selecciona una opcion: ");
             opcion = sc.nextInt();
@@ -57,6 +58,10 @@ public class Main {
 
                 case 7:
                     DigitalBookMain.modifyDigitalBook();
+                    break;
+
+                case 8:
+                    DigitalBookMain.getDigittalBooks();
                     break;
 
             }

@@ -24,6 +24,7 @@ public class DigitalBook implements Serializable {
                 " isbn  = " + isbn + '\n' +
                 " name = " + name + '\n' +
                 " author = " + author + '\n' +
+                " publisher = " + publisher + '\n' +
                 " relaseDate = " + relaseDate + '\n';
     }
 

@@ -2,10 +2,7 @@ package com.iesam.digitallibrary.feature.digitalBook.presentation;
 
 import com.iesam.digitallibrary.feature.digitalBook.data.DigitalBookDataRepository;
 import com.iesam.digitallibrary.feature.digitalBook.data.local.DigitalBookFileLocalDataSource;
-import com.iesam.digitallibrary.feature.digitalBook.domain.CreateDigitalBookUseCase;
-import com.iesam.digitallibrary.feature.digitalBook.domain.DeleteDigitalBookUseCase;
-import com.iesam.digitallibrary.feature.digitalBook.domain.DigitalBook;
-import com.iesam.digitallibrary.feature.digitalBook.domain.ModifyDigitalBookUseCase;
+import com.iesam.digitallibrary.feature.digitalBook.domain.*;
 
 import java.util.Scanner;
 
@@ -70,8 +67,14 @@ public class DigitalBookMain {
 
         ModifyDigitalBookUseCase modifyUserUseCase = new ModifyDigitalBookUseCase(new DigitalBookDataRepository(new DigitalBookFileLocalDataSource()));
         modifyUserUseCase.execute(isbn, digitalBook);
+    }
 
+    public static void getDigittalBooks(){
 
+        System.out.println("---LISTA DE LIBROS---");
+
+        GetDigitalBooksUseCase getDigitalBooksUseCase = new GetDigitalBooksUseCase(new DigitalBookDataRepository(new DigitalBookFileLocalDataSource()));
+        getDigitalBooksUseCase.execute();
     }
 
 }
