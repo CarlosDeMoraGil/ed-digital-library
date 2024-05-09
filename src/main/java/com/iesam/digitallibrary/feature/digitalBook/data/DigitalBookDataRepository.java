@@ -23,5 +23,15 @@ public class DigitalBookDataRepository implements DigitalBookRepository {
     public void deleteDigitalBook(String isbn) {
         digitalBookFileLocalDataSource.delete(isbn);
     }
+    @Override
+    public void modifyDigitalBook(String isbn, DigitalBook digitalBook) {
+        digitalBookFileLocalDataSource.modify(isbn, digitalBook);
+    }
+
+    @Override
+    public void getDigitalBooks() {
+        digitalBookFileLocalDataSource.getAll();
+    }
+
 
 }

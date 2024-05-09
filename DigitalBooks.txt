@@ -1,1 +1,1 @@
-[]
+[{"isbn":"12345abcde","name":"The Woman In Me","author":"Britney Spears","publisher":"Santillana","relaseDate":"25/10/2023"},{"isbn":"1234abcd","name":"MiLibro","author":"Yo","publisher":"Santillana","relaseDate":"15/6/2024"}]

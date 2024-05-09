@@ -24,11 +24,13 @@ public class Main {
             System.out.println("4. Mostrar Usuarios");
             System.out.println("5. Añadir Libro");
             System.out.println("6. Borrar Libro");
+            System.out.println("7. Modificar Libro");
+            System.out.println("8. Mostrar Libros");
 
             System.out.println("Selecciona una opcion: ");
             opcion = sc.nextInt();
-
-            switch (opcion) {
+            
+            switch (opcion){
 
                 case 1:
                     UserMain.addUser();
@@ -41,11 +43,11 @@ public class Main {
                 case 3:
                     UserMain.modifyUser();
                     break;
-
+                
                 case 4:
                     UserMain.getUsers();
                     break;
-
+                
                 case 5:
                     DigitalBookMain.addDigitalBook();
                     break;
@@ -53,8 +55,15 @@ public class Main {
                 case 6:
                     DigitalBookMain.deleteDigitalBook();
                     break;
-            }
 
+                case 7:
+                    DigitalBookMain.modifyDigitalBook();
+                    break;
+
+                case 8:
+                    DigitalBookMain.getDigittalBooks();
+                    break;
+            }
 
         }
 

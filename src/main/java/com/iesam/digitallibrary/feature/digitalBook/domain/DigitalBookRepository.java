@@ -5,5 +5,7 @@ public interface DigitalBookRepository {
 
     void addDigitalBook(DigitalBook digitalBook);
     void deleteDigitalBook(String isbn);
+    void modifyDigitalBook(String isbn, DigitalBook digitalBook);
+    void getDigitalBooks();
 
 }
