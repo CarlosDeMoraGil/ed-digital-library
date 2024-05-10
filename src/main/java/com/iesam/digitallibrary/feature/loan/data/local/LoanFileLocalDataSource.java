@@ -39,15 +39,15 @@ public class LoanFileLocalDataSource {
             myWriter.close();
             System.out.println("Datos guardados correctamente");
         } catch (IOException e) {
-            System.out.println("Ha ocurrisbno un error al guardar la información.");
+            System.out.println("Ha ocurrido un error al guardar la información.");
             e.printStackTrace();
         }
     }
 
-    public Loan findByisbn(String isbn) {
+    public Loan findByid(String id) {
         List<Loan> models = findAll();
         for (Loan model : models) {
-            if (Objects.equals(model.isbn, isbn)) {
+            if (Objects.equals(model.id, id)) {
                 return model;
             }
         }
@@ -68,11 +68,11 @@ public class LoanFileLocalDataSource {
             }
             myReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Ha ocurrisbno un error al obtener el listado.");
+            System.out.println("Ha ocurrido un error al obtener el listado.");
             e.printStackTrace();
 
         } catch (IOException e) {
-            System.out.println("Ha ocurrisbno un error al crear el fichero.");
+            System.out.println("Ha ocurrido un error al crear el fichero.");
             throw new RuntimeException(e);
         }
         return new ArrayList<>();
@@ -88,11 +88,11 @@ public class LoanFileLocalDataSource {
 
     }
 
-    public void delete(String modelisbn) {
+    public void delete(String modelid) {
         List<Loan> newList = new ArrayList<>();
         List<Loan> models = findAll();
         for (Loan model : models) {
-            if (!model.isbn.equals(modelisbn)) {
+            if (!model.id.equals(modelid)) {
 
                 newList.add(model);
             }
@@ -100,11 +100,11 @@ public class LoanFileLocalDataSource {
         saveList(newList);
     }
 
-    public void modify(String isbn, Loan newLoan) {
+    public void modify(String id, Loan newLoan) {
         List<Loan> models = findAll();
         for (int i = 0; i < models.size(); i++) {
             Loan Loan = models.get(i);
-            if (Objects.equals(Loan.getIsbn(), isbn)) {
+            if (Objects.equals(Loan.id, id)) {
                 // Reemplazar el usuario antiguo con el nuevo usuario
                 models.set(i, newLoan);
                 saveList(models);
@@ -112,7 +112,7 @@ public class LoanFileLocalDataSource {
                 return;
             }
         }
-        System.out.println("No se encontró ningún usuario con el isbn proporcionado.");
+        System.out.println("No se encontró ningún usuario con el id proporcionado.");
     }
 
 }
