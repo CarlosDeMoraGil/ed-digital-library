@@ -65,8 +65,8 @@ public class DigitalBookMain {
 
         DigitalBook digitalBook = new DigitalBook(isbn, name, author, publisher, relaseDate);
 
-        ModifyDigitalBookUseCase modifyUserUseCase = new ModifyDigitalBookUseCase(new DigitalBookDataRepository(new DigitalBookFileLocalDataSource()));
-        modifyUserUseCase.execute(isbn, digitalBook);
+        ModifyDigitalBookUseCase modifyDigitalBookUseCase = new ModifyDigitalBookUseCase(new DigitalBookDataRepository(new DigitalBookFileLocalDataSource()));
+        modifyDigitalBookUseCase.execute(isbn, digitalBook);
     }
 
     public static void getDigittalBooks(){
@@ -76,5 +76,6 @@ public class DigitalBookMain {
         GetDigitalBooksUseCase getDigitalBooksUseCase = new GetDigitalBooksUseCase(new DigitalBookDataRepository(new DigitalBookFileLocalDataSource()));
         getDigitalBooksUseCase.execute();
     }
+
 
 }
