@@ -4,23 +4,23 @@ import com.iesam.digitallibrary.feature.digitalBook.data.DigitalBookDataReposito
 import com.iesam.digitallibrary.feature.digitalBook.data.local.DigitalBookFileLocalDataSource;
 import com.iesam.digitallibrary.feature.digitalBook.domain.DigitalBook;
 import com.iesam.digitallibrary.feature.digitalBook.domain.GetDigitalBookUseCase;
-import com.iesam.digitallibrary.feature.digitalBook.presentation.DigitalBookMain;
 import com.iesam.digitallibrary.feature.loan.data.LoanDataRepository;
 import com.iesam.digitallibrary.feature.loan.data.local.LoanFileLocalDataSource;
 import com.iesam.digitallibrary.feature.loan.domain.CreateLoanUseCase;
+import com.iesam.digitallibrary.feature.loan.domain.DeleteLoanUseCase;
+
 import com.iesam.digitallibrary.feature.loan.domain.Loan;
 import com.iesam.digitallibrary.feature.user.data.UserDataRepository;
 import com.iesam.digitallibrary.feature.user.data.local.UserFileLocalDataSource;
 import com.iesam.digitallibrary.feature.user.domain.GetUserUseCase;
 import com.iesam.digitallibrary.feature.user.domain.User;
-import com.iesam.digitallibrary.feature.user.presentation.UserMain;
 
 import java.util.Scanner;
 
 public class LoanMain {
 
     static Scanner sc = new Scanner(System.in);
-    public static void addUser(){
+    public static void addLoan(){
 
         System.out.println("---AÑADIR PRESTAMO---");
 
@@ -44,6 +44,17 @@ public class LoanMain {
         Loan loan = new Loan(loanId, user, digitalBook,"15/3/2024", "15/4/2024");
         CreateLoanUseCase createLoanUseCase = new CreateLoanUseCase(new LoanDataRepository(new LoanFileLocalDataSource()));
         createLoanUseCase.execute(loan);
+
+    }
+
+    public static void deleteLoan(){
+
+        System.out.println("---BORRAR PRESTAMO---");
+        System.out.println("Introduce el ID: ");
+        String id = sc.nextLine();
+
+        DeleteLoanUseCase deleteLoanUseCase = new DeleteLoanUseCase(new LoanDataRepository(new LoanFileLocalDataSource()));
+        deleteLoanUseCase.execute(id);
 
     }
 

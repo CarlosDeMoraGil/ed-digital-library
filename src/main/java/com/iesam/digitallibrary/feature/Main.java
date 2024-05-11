@@ -35,6 +35,8 @@ public class Main {
             System.out.println("8. Mostrar Libros");
             System.out.println("---PRESTAMOS---");
             System.out.println("9. Añadir Prestamo");
+            System.out.println("10. Borrar Prestamo");
+
 
             System.out.println("Selecciona una opcion: ");
             opcion = sc.nextInt();
@@ -74,6 +76,11 @@ public class Main {
                     break;
 
                 case 9:
+                    LoanMain.addLoan();
+                    break;
+                case 10:
+                    LoanMain.deleteLoan();
+                    break;
                     LoanMain.addUser();
             }
 
