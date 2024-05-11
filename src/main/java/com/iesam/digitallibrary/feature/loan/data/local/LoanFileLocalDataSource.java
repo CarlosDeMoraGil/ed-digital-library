@@ -125,6 +125,7 @@ public class LoanFileLocalDataSource {
             for(Loan loan : lista){
                 Date fechaFin = formato.parse(loan.getFechaEnd());
                 if(fechaFin.before(fechaHoy)){
+                    System.out.println("---PRESTAMO " + loan.getId() + "---");
                     System.out.println(loan);
                 }
             }
