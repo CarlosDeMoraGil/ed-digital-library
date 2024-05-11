@@ -5,7 +5,7 @@ public interface UserRepository {
     void addUser(User user);
     void deleteUser(String id);
     void modifyUser(String id, User user);
-
+    User getUser(String id);
     void getUsers();
 
 
