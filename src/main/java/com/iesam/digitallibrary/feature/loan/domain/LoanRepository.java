@@ -4,4 +4,5 @@ public interface LoanRepository {
 
     void addLoan(Loan loan);
     void deleteLoan(String id);
+
 }
