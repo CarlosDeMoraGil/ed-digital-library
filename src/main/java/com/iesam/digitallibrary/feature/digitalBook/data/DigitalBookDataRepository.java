@@ -33,4 +33,9 @@ public class DigitalBookDataRepository implements DigitalBookRepository {
         digitalBookFileLocalDataSource.getAll();
     }
 
+    @Override
+    public DigitalBook getUser(String isbn) {
+        return digitalBookFileLocalDataSource.findByisbn(isbn);
+    }
+
 }
