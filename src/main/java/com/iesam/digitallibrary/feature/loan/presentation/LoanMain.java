@@ -6,10 +6,8 @@ import com.iesam.digitallibrary.feature.digitalBook.domain.DigitalBook;
 import com.iesam.digitallibrary.feature.digitalBook.domain.GetDigitalBookUseCase;
 import com.iesam.digitallibrary.feature.loan.data.LoanDataRepository;
 import com.iesam.digitallibrary.feature.loan.data.local.LoanFileLocalDataSource;
-import com.iesam.digitallibrary.feature.loan.domain.CreateLoanUseCase;
-import com.iesam.digitallibrary.feature.loan.domain.DeleteLoanUseCase;
+import com.iesam.digitallibrary.feature.loan.domain.*;
 
-import com.iesam.digitallibrary.feature.loan.domain.Loan;
 import com.iesam.digitallibrary.feature.user.data.UserDataRepository;
 import com.iesam.digitallibrary.feature.user.data.local.UserFileLocalDataSource;
 import com.iesam.digitallibrary.feature.user.domain.GetUserUseCase;
@@ -41,7 +39,7 @@ public class LoanMain {
         GetDigitalBookUseCase GetDigitalBookUseCase = new GetDigitalBookUseCase(new DigitalBookDataRepository(new DigitalBookFileLocalDataSource()));
         DigitalBook digitalBook = GetDigitalBookUseCase.execute(isbn);
 
-        Loan loan = new Loan(loanId, user, digitalBook,"15/3/2024", "15/4/2024");
+        Loan loan = new Loan(loanId, user, digitalBook,"15/06/2024");
         CreateLoanUseCase createLoanUseCase = new CreateLoanUseCase(new LoanDataRepository(new LoanFileLocalDataSource()));
         createLoanUseCase.execute(loan);
 
@@ -55,6 +53,25 @@ public class LoanMain {
 
         DeleteLoanUseCase deleteLoanUseCase = new DeleteLoanUseCase(new LoanDataRepository(new LoanFileLocalDataSource()));
         deleteLoanUseCase.execute(id);
+
+    }
+
+    public static void getFinishedLoan(){
+
+        System.out.println("---PRESTAMOS FINALIZADOS---");
+
+        GetFinishedLoanUseCase getFinishedLoanUseCase = new GetFinishedLoanUseCase(new LoanDataRepository(new LoanFileLocalDataSource())) ;
+        getFinishedLoanUseCase.execute();
+
+    }
+
+    public static void getUnfinishedLoan(){
+
+        System.out.println("---PRESTAMOS NO FINALIZADOS---");
+
+        GetUnfinichedLoansUseCase getUnfinichedLoansUseCase = new GetUnfinichedLoansUseCase(new LoanDataRepository(new LoanFileLocalDataSource()));
+        getUnfinichedLoansUseCase.execute();
+
 
     }
 

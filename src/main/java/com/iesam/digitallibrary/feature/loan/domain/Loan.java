@@ -7,18 +7,18 @@ import java.util.Date;
 
 public class Loan {
 
-    private final Date date = new Date();
+
     public final String id;
+
     public final User user;
     public final DigitalBook book;
-    public final String fechaInit;
+    public final Date fechaInit = new Date();
     public final String fechaEnd;
 
-    public Loan(String id, User user, DigitalBook book, String fechaInit, String fechaEnd) {
+    public Loan(String id, User user, DigitalBook book, String fechaEnd) {
         this.id = id;
         this.user = user;
         this.book = book;
-        this.fechaInit = fechaInit;
         this.fechaEnd = fechaEnd;
     }
 
@@ -32,9 +32,6 @@ public class Loan {
                 " FechaEnd = " + fechaEnd + '\n';
     }
 
-    public Date getDate() {
-        return date;
-    }
 
     public String getId() {
         return id;
@@ -48,7 +45,7 @@ public class Loan {
         return book;
     }
 
-    public String getFechaInit() {
+    public Date getFechaInit() {
         return fechaInit;
     }
 

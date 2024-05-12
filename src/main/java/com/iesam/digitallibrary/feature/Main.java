@@ -36,6 +36,8 @@ public class Main {
             System.out.println("---PRESTAMOS---");
             System.out.println("9. Añadir Prestamo");
             System.out.println("10. Borrar Prestamo");
+            System.out.println("11. Mostrar Prestamos Finalizados");
+            System.out.println("12. Mostrar Prestamos No Finalizados");
 
 
             System.out.println("Selecciona una opcion: ");
@@ -81,7 +83,14 @@ public class Main {
                 case 10:
                     LoanMain.deleteLoan();
                     break;
-                    LoanMain.addUser();
+
+                case 11:
+                    LoanMain.getFinishedLoan();
+                    break;
+
+                case 12:
+                    LoanMain.getUnfinishedLoan();
+                    break;
             }
 
         }
