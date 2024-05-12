@@ -9,10 +9,9 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Scanner;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 public class LoanFileLocalDataSource {
     private String nameFile = "Loans.txt";
@@ -114,5 +113,28 @@ public class LoanFileLocalDataSource {
         }
         System.out.println("No se encontró ningún usuario con el id proporcionado.");
     }
+
+    public void getFinishedLoan(){
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        List<Loan> lista = findAll();
+
+        Date fechaHoy = new Date();
+
+        try{
+
+            for(Loan loan : lista){
+                Date fechaFin = formato.parse(loan.getFechaEnd());
+                if(fechaFin.before(fechaHoy)){
+                    System.out.println("---PRESTAMO " + loan.getId() + "---");
+                    System.out.println(loan);
+                }
+            }
+
+        }catch (ParseException e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+
 
 }
