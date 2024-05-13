@@ -27,4 +27,9 @@ public class LoanDataRepository implements LoanRepository {
         loanFileLocalDataSource.getFinishedLoan();
     }
 
+    @Override
+    public void getUnfinishedLoans() {
+        loanFileLocalDataSource.getUnfinishedLoan();
+    }
+
 }

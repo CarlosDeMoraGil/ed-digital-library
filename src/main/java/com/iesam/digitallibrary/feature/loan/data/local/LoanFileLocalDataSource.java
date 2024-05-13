@@ -136,5 +136,26 @@ public class LoanFileLocalDataSource {
 
     }
 
+    public void getUnfinishedLoan(){
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        List<Loan> lista = findAll();
+
+        Date fechaHoy = new Date();
+
+        try{
+
+            for(Loan loan : lista){
+                Date fechaFin = formato.parse(loan.getFechaEnd());
+                if(fechaFin.after(fechaHoy)){
+                    System.out.println("---PRESTAMO " + loan.getId() + "---");
+                    System.out.println(loan);
+                }
+            }
+
+        }catch (ParseException e){
+            System.out.println(e.getMessage());
+        }
+
+    }
 
 }
