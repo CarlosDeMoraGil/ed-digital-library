@@ -6,4 +6,5 @@ public interface LoanRepository {
     void deleteLoan(String id);
     void getFinishedLoans();
     void getUnfinishedLoans();
+
 }

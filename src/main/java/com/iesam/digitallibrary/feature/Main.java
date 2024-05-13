@@ -40,6 +40,7 @@ public class Main {
             System.out.println("12. Mostrar Prestamos No Finalizados");
 
 
+
             System.out.println("Selecciona una opcion: ");
             opcion = sc.nextInt();
             
@@ -91,6 +92,7 @@ public class Main {
                 case 12:
                     LoanMain.getUnfinishedLoan();
                     break;
+
             }
 
         }

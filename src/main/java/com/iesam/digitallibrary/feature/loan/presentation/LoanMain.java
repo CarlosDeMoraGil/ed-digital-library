@@ -8,6 +8,8 @@ import com.iesam.digitallibrary.feature.loan.data.LoanDataRepository;
 import com.iesam.digitallibrary.feature.loan.data.local.LoanFileLocalDataSource;
 import com.iesam.digitallibrary.feature.loan.domain.*;
 
+import com.iesam.digitallibrary.feature.loan.domain.GetFinishedLoanUseCase;
+import com.iesam.digitallibrary.feature.loan.domain.Loan;
 import com.iesam.digitallibrary.feature.user.data.UserDataRepository;
 import com.iesam.digitallibrary.feature.user.data.local.UserFileLocalDataSource;
 import com.iesam.digitallibrary.feature.user.domain.GetUserUseCase;
@@ -40,6 +42,8 @@ public class LoanMain {
         DigitalBook digitalBook = GetDigitalBookUseCase.execute(isbn);
 
         Loan loan = new Loan(loanId, user, digitalBook,"15/06/2024");
+        Loan loan = new Loan(loanId, user, digitalBook,"01/04/2024");
+
         CreateLoanUseCase createLoanUseCase = new CreateLoanUseCase(new LoanDataRepository(new LoanFileLocalDataSource()));
         createLoanUseCase.execute(loan);
 
@@ -71,6 +75,7 @@ public class LoanMain {
 
         GetUnfinichedLoansUseCase getUnfinichedLoansUseCase = new GetUnfinichedLoansUseCase(new LoanDataRepository(new LoanFileLocalDataSource()));
         getUnfinichedLoansUseCase.execute();
+
 
 
     }
