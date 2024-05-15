@@ -5,6 +5,7 @@ import com.iesam.digitallibrary.feature.user.domain.User;
 
 import java.util.Date;
 
+
 public class Loan {
 
 
@@ -12,8 +13,8 @@ public class Loan {
 
     public final User user;
     public final DigitalBook book;
-    public final Date fechaInit = new Date();
     public final String fechaEnd;
+
 
     public Loan(String id, User user, DigitalBook book, String fechaEnd) {
         this.id = id;
@@ -28,7 +29,6 @@ public class Loan {
                 " Id  = " + id + '\n' +
                 " User = " + user.toString() + '\n' +
                 " Book = " + book.toString() + '\n' +
-                " FechaInit = " + fechaInit + '\n' +
                 " FechaEnd = " + fechaEnd + '\n';
     }
 
@@ -45,9 +45,6 @@ public class Loan {
         return book;
     }
 
-    public Date getFechaInit() {
-        return fechaInit;
-    }
 
     public String getFechaEnd() {
         return fechaEnd;

@@ -42,8 +42,6 @@ public class LoanMain {
         DigitalBook digitalBook = GetDigitalBookUseCase.execute(isbn);
 
         Loan loan = new Loan(loanId, user, digitalBook,"15/06/2024");
-        Loan loan = new Loan(loanId, user, digitalBook,"01/04/2024");
-
         CreateLoanUseCase createLoanUseCase = new CreateLoanUseCase(new LoanDataRepository(new LoanFileLocalDataSource()));
         createLoanUseCase.execute(loan);
 
@@ -75,7 +73,6 @@ public class LoanMain {
 
         GetUnfinichedLoansUseCase getUnfinichedLoansUseCase = new GetUnfinichedLoansUseCase(new LoanDataRepository(new LoanFileLocalDataSource()));
         getUnfinichedLoansUseCase.execute();
-
 
 
     }
