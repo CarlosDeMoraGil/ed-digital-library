@@ -27,7 +27,7 @@ class DeleteUserUseCaseTest {
     }
 
     @Test
-    void reciboElIdDeUnUsuarioYLoBorro() {
+    void givenUserIdThenUserIsDeleted() {
 
         //Given
         User user = new User("708", "Carlos", "DMG", "04/09/2005", "carlos@gmail.com", "Calle 31", "640");

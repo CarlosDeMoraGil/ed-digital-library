@@ -1,10 +1,10 @@
 package com.iesam.digitallibrary.feature.user.domain;
 
-public class CreateUserUserCase {
+public class CreateUserUseCase {
 
     private UserRepository userRepository;
 
-    public CreateUserUserCase(UserRepository userRepository) {
+    public CreateUserUseCase(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 

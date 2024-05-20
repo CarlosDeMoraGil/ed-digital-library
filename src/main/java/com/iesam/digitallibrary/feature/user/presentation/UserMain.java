@@ -35,8 +35,8 @@ public class UserMain {
         String number = sc.nextLine();
 
         User user = new User(id, name, surname, dateBorn, email, address, number);
-        CreateUserUserCase createUserUserCase = new CreateUserUserCase( new UserDataRepository(new UserFileLocalDataSource()));
-        createUserUserCase.execute(user);
+        CreateUserUseCase createUserUseCase = new CreateUserUseCase( new UserDataRepository(new UserFileLocalDataSource()));
+        createUserUseCase.execute(user);
 
     }
 

@@ -28,7 +28,7 @@ class GetUsersUseCaseTest {
     }
 
     @Test
-    public void reciboTodosLosUsuariosAlmacenados(){
+    public void returnAllSavedUsers(){
 
         //Given ¿?
 
