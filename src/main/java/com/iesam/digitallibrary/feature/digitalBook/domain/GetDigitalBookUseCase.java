@@ -9,7 +9,7 @@ public class GetDigitalBookUseCase {
     }
 
     public DigitalBook execute (String id){
-        return this.digitalBookRepository.getUser(id);
+        return this.digitalBookRepository.getDigitalBook(id);
     }
 
 }

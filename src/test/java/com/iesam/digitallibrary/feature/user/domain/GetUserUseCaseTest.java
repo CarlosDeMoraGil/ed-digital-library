@@ -29,7 +29,7 @@ class GetUserUseCaseTest {
     }
 
     @Test
-    public void reciboUnIdRegistradoYDevuelvoElUsuarioCorrespondiente(){
+    public void givenValidIdThenReturnExpectedUser(){
 
         //Given
         User userExcepted = new User("1","Carlos","DMG","04/09/2005","carlos@gmail.com","Calle 31","640");

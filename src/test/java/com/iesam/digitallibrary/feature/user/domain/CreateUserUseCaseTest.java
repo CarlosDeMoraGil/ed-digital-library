@@ -8,33 +8,31 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 @ExtendWith(MockitoExtension.class)
-class CreateUserUserCaseTest {
+class CreateUserUseCaseTest {
 
     @Mock
     UserRepository userRepository;
-    CreateUserUserCase createUserUserCase;
+    CreateUserUseCase createUserUseCase;
 
     @BeforeEach
     void setUp() {
-        createUserUserCase = new CreateUserUserCase(userRepository);
+        createUserUseCase = new CreateUserUseCase(userRepository);
     }
 
     @AfterEach
     void tearDown() {
-        createUserUserCase = null;
+        createUserUseCase = null;
     }
 
     @Test
-    public void reciboUnUsuarioYLoGuardo(){
+    public void givenUserThenSaveUser(){
 
         //Given
         User user = new User("1","Carlos","DMG","04/09/2005","carlos@gmail.com","Calle 31","640");
 
         //Whem
-        createUserUserCase.execute(user);
+        createUserUseCase.execute(user);
 
         //Then
         Mockito.verify(userRepository, Mockito.times(1)).addUser(user);

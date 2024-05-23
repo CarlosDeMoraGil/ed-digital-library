@@ -34,7 +34,7 @@ public class DigitalBookDataRepository implements DigitalBookRepository {
     }
 
     @Override
-    public DigitalBook getUser(String isbn) {
+    public DigitalBook getDigitalBook(String isbn) {
         return digitalBookFileLocalDataSource.findByisbn(isbn);
     }
 

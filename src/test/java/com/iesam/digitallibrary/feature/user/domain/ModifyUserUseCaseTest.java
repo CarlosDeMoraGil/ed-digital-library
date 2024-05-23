@@ -28,7 +28,7 @@ class ModifyUserUseCaseTest {
     }
 
     @Test
-    public void reciboUnUsuarioYLoGuardo(){
+    public void givenValidIdAndUserReturnModifyUser(){
 
         //Given
         User user = new User("1","Carlos","DMG","04/09/2005","carlos@gmail.com","Calle 31","640");
