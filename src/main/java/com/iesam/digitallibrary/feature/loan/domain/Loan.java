@@ -1,9 +1,7 @@
 package com.iesam.digitallibrary.feature.loan.domain;
 
-import com.iesam.digitallibrary.feature.digitalBook.domain.DigitalBook;
+import com.iesam.digitallibrary.feature.resource.digitalBook.domain.DigitalBook;
 import com.iesam.digitallibrary.feature.user.domain.User;
-
-import java.util.Date;
 
 
 public class Loan {
