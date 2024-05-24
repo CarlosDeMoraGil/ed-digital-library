@@ -1,4 +1,4 @@
-package com.iesam.digitallibrary.feature.digitalBook.domain;
+package com.iesam.digitallibrary.feature.resource.digitalBook.domain;
 
 public class GetDigitalBooksUseCase {
 

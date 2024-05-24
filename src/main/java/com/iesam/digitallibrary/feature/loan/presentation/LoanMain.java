@@ -1,9 +1,9 @@
 package com.iesam.digitallibrary.feature.loan.presentation;
 
-import com.iesam.digitallibrary.feature.digitalBook.data.DigitalBookDataRepository;
-import com.iesam.digitallibrary.feature.digitalBook.data.local.DigitalBookFileLocalDataSource;
-import com.iesam.digitallibrary.feature.digitalBook.domain.DigitalBook;
-import com.iesam.digitallibrary.feature.digitalBook.domain.GetDigitalBookUseCase;
+import com.iesam.digitallibrary.feature.resource.digitalBook.data.DigitalBookDataRepository;
+import com.iesam.digitallibrary.feature.resource.digitalBook.data.local.DigitalBookFileLocalDataSource;
+import com.iesam.digitallibrary.feature.resource.digitalBook.domain.DigitalBook;
+import com.iesam.digitallibrary.feature.resource.digitalBook.domain.GetDigitalBookUseCase;
 import com.iesam.digitallibrary.feature.loan.data.LoanDataRepository;
 import com.iesam.digitallibrary.feature.loan.data.local.LoanFileLocalDataSource;
 import com.iesam.digitallibrary.feature.loan.domain.*;

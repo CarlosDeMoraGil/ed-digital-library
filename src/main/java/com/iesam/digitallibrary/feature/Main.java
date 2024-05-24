@@ -1,11 +1,9 @@
 package com.iesam.digitallibrary.feature;
 
-import com.iesam.digitallibrary.feature.digitalBook.presentation.DigitalBookMain;
-import com.iesam.digitallibrary.feature.loan.data.LoanDataRepository;
+import com.iesam.digitallibrary.feature.resource.presentation.ResourceMain;
 import com.iesam.digitallibrary.feature.loan.presentation.LoanMain;
 import com.iesam.digitallibrary.feature.user.presentation.UserMain;
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -63,19 +61,19 @@ public class Main {
                     break;
                 
                 case 5:
-                    DigitalBookMain.addDigitalBook();
+                    ResourceMain.addDigitalBook();
                     break;
 
                 case 6:
-                    DigitalBookMain.deleteDigitalBook();
+                    ResourceMain.deleteDigitalBook();
                     break;
 
                 case 7:
-                    DigitalBookMain.modifyDigitalBook();
+                    ResourceMain.modifyDigitalBook();
                     break;
 
                 case 8:
-                    DigitalBookMain.getDigittalBooks();
+                    ResourceMain.getDigittalBooks();
                     break;
 
                 case 9:
