@@ -1,7 +1,9 @@
 package com.iesam.digitallibrary.feature.digitalBook.domain;
 
 
-import com.iesam.digitallibrary.feature.user.domain.User;
+import com.iesam.digitallibrary.feature.resource.digitalBook.domain.DigitalBook;
+import com.iesam.digitallibrary.feature.resource.digitalBook.domain.DigitalBookRepository;
+import com.iesam.digitallibrary.feature.resource.digitalBook.domain.GetDigitalBookUseCase;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +18,7 @@ class GetDigitalBookUseCaseTest {
 
     @Mock
     DigitalBookRepository digitalBookRepository;
-    GetDigitalBookUseCase  getDigitalBookUseCase;
+    GetDigitalBookUseCase getDigitalBookUseCase;
 
     @BeforeEach
     void setUp() {
@@ -39,11 +41,11 @@ class GetDigitalBookUseCaseTest {
         DigitalBook bookRecived = getDigitalBookUseCase.execute("1234abcd");
         
         //Then
-        Assertions.assertEquals(bookExpected.isbn, "1234abcd");
-        Assertions.assertEquals(bookExpected.name, "The Woman In Me");
-        Assertions.assertEquals(bookExpected.author, "Britney Spears");
-        Assertions.assertEquals(bookExpected.relaseDate, "25/10/2023");
-        Assertions.assertEquals(bookExpected.publisher, "Santillana");
+        Assertions.assertEquals(bookExpected.getIsbn(), "1234abcd");
+        Assertions.assertEquals(bookExpected.getTitle(), "The Woman In Me");
+        Assertions.assertEquals(bookExpected.getAuthor(), "Britney Spears");
+        Assertions.assertEquals(bookExpected.getReleaseDate(), "25/10/2023");
+        Assertions.assertEquals(bookExpected.getPublisher(), "Santillana");
         
     }
 
@@ -53,7 +55,7 @@ class GetDigitalBookUseCaseTest {
         DigitalBook notValidBook = new DigitalBook("1234abcd","The Woman In Me","Britney Spears","Santillana","25/10/2023");
         Mockito.when(digitalBookRepository.getDigitalBook("1234abcd")).thenReturn(null);
         //When
-        DigitalBook bookRecived = getDigitalBookUseCase.execute(notValidBook.isbn);
+        DigitalBook bookRecived = getDigitalBookUseCase.execute(notValidBook.getIsbn());
         //Then
         Assertions.assertNull(bookRecived);
     }

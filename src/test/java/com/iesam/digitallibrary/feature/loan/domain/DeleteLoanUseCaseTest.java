@@ -31,9 +31,9 @@ class DeleteLoanUseCaseTest {
     public void reciboUnIdYBorroElPrestamo(){
 
         //Given
-        DigitalBook digitalBook = new DigitalBook("1234abcd","The Woman In Me","Britney Spears","25/10/2023","Santillana");
+        DigitalBook music = new DigitalBook("1234abcd","The Woman In Me","Britney Spears","25/10/2023","Santillana");
         User user = new User("1","Carlos","DMG","04/09/2005","carlos@gmail.com","Calle 31","640");
-        Loan loan = new Loan("1001",user,digitalBook,"25/06/2024");
+        Loan loan = new Loan("1001",user, music,"25/06/2024");
 
         //When
         deleteLoanUseCase.execute("1001");

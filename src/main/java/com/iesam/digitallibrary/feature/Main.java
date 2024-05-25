@@ -36,6 +36,11 @@ public class Main {
             System.out.println("10. Borrar Prestamo");
             System.out.println("11. Mostrar Prestamos Finalizados");
             System.out.println("12. Mostrar Prestamos No Finalizados");
+            System.out.println("---MÚSICA---");
+            System.out.println("13. Añadir Música");
+            System.out.println("14. Borrar Música");
+            System.out.println("15. Modificar Música");
+            System.out.println("16. Mostrar Música");
 
 
 
@@ -90,7 +95,18 @@ public class Main {
                 case 12:
                     LoanMain.getUnfinishedLoan();
                     break;
-
+                case 13:
+                    ResourceMain.addMusic();
+                    break;
+                case 14:
+                    ResourceMain.deleteMusic();
+                    break;
+                case 15:
+                    ResourceMain.modifyMusic();
+                    break;
+                case 16:
+                    ResourceMain.getMusic();
+                    break;
             }
 
         }

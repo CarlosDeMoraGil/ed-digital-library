@@ -1,5 +1,8 @@
 package com.iesam.digitallibrary.feature.digitalBook.domain;
 
+import com.iesam.digitallibrary.feature.resource.digitalBook.domain.DeleteDigitalBookUseCase;
+import com.iesam.digitallibrary.feature.resource.digitalBook.domain.DigitalBook;
+import com.iesam.digitallibrary.feature.resource.digitalBook.domain.DigitalBookRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

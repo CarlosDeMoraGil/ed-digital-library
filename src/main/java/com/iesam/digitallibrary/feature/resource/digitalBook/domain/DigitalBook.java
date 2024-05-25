@@ -2,8 +2,6 @@ package com.iesam.digitallibrary.feature.resource.digitalBook.domain;
 
 import com.iesam.digitallibrary.feature.resource.domain.Resource;
 
-import java.io.Serializable;
-
 public class DigitalBook extends Resource {
 
     private final String isbn;
