@@ -1,4 +1,4 @@
-package com.iesam.digitallibrary.feature.digitalBook.domain;
+package com.iesam.digitallibrary.feature.resource.digitalBook.domain;
 
 
 public interface DigitalBookRepository {
@@ -7,5 +7,5 @@ public interface DigitalBookRepository {
     void deleteDigitalBook(String isbn);
     void modifyDigitalBook(String isbn, DigitalBook digitalBook);
     void getDigitalBooks();
-    DigitalBook getDigitalBook(String isbn);
+    DigitalBook getDigitalBook(String id);
 }

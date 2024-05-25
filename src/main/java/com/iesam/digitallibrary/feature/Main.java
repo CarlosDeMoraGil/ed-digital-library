@@ -1,11 +1,9 @@
 package com.iesam.digitallibrary.feature;
 
-import com.iesam.digitallibrary.feature.digitalBook.presentation.DigitalBookMain;
-import com.iesam.digitallibrary.feature.loan.data.LoanDataRepository;
+import com.iesam.digitallibrary.feature.resource.presentation.ResourceMain;
 import com.iesam.digitallibrary.feature.loan.presentation.LoanMain;
 import com.iesam.digitallibrary.feature.user.presentation.UserMain;
 
-import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -38,6 +36,11 @@ public class Main {
             System.out.println("10. Borrar Prestamo");
             System.out.println("11. Mostrar Prestamos Finalizados");
             System.out.println("12. Mostrar Prestamos No Finalizados");
+            System.out.println("---MÚSICA---");
+            System.out.println("13. Añadir Música");
+            System.out.println("14. Borrar Música");
+            System.out.println("15. Modificar Música");
+            System.out.println("16. Mostrar Música");
 
 
 
@@ -63,19 +66,19 @@ public class Main {
                     break;
                 
                 case 5:
-                    DigitalBookMain.addDigitalBook();
+                    ResourceMain.addDigitalBook();
                     break;
 
                 case 6:
-                    DigitalBookMain.deleteDigitalBook();
+                    ResourceMain.deleteDigitalBook();
                     break;
 
                 case 7:
-                    DigitalBookMain.modifyDigitalBook();
+                    ResourceMain.modifyDigitalBook();
                     break;
 
                 case 8:
-                    DigitalBookMain.getDigittalBooks();
+                    ResourceMain.getDigittalBooks();
                     break;
 
                 case 9:
@@ -92,7 +95,18 @@ public class Main {
                 case 12:
                     LoanMain.getUnfinishedLoan();
                     break;
-
+                case 13:
+                    ResourceMain.addMusic();
+                    break;
+                case 14:
+                    ResourceMain.deleteMusic();
+                    break;
+                case 15:
+                    ResourceMain.modifyMusic();
+                    break;
+                case 16:
+                    ResourceMain.getMusic();
+                    break;
             }
 
         }

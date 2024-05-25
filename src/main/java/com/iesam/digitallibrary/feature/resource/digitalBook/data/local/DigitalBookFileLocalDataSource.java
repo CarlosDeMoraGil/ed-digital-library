@@ -1,8 +1,8 @@
-package com.iesam.digitallibrary.feature.digitalBook.data.local;
+package com.iesam.digitallibrary.feature.resource.digitalBook.data.local;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.iesam.digitallibrary.feature.digitalBook.domain.DigitalBook;
+import com.iesam.digitallibrary.feature.resource.digitalBook.domain.DigitalBook;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -47,7 +47,7 @@ public class DigitalBookFileLocalDataSource {
     public DigitalBook findByisbn(String isbn) {
         List<DigitalBook> models = findAll();
         for (DigitalBook model : models) {
-            if (Objects.equals(model.isbn, isbn)) {
+            if (Objects.equals(model.getIsbn(), isbn)) {
                 return model;
             }
         }
@@ -92,7 +92,7 @@ public class DigitalBookFileLocalDataSource {
         List<DigitalBook> newList = new ArrayList<>();
         List<DigitalBook> models = findAll();
         for (DigitalBook model : models) {
-            if (!model.isbn.equals(modelisbn)) {
+            if (!model.getIsbn().equals(modelisbn)) {
 
                 newList.add(model);
             }
