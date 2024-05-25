@@ -1,8 +1,7 @@
 package com.iesam.digitallibrary.feature;
 
-import com.iesam.digitallibrary.feature.loan.domain.Loan;
-import com.iesam.digitallibrary.feature.resource.presentation.ResourceMain;
 import com.iesam.digitallibrary.feature.loan.presentation.LoanMain;
+import com.iesam.digitallibrary.feature.resource.presentation.ResourceMain;
 import com.iesam.digitallibrary.feature.user.presentation.UserMain;
 
 import java.util.Scanner;
@@ -128,10 +127,10 @@ public class Main {
 
                 case 3:
                     System.out.println("---PRESTAMOS---");
-                    System.out.println("9. Añadir Prestamo");
-                    System.out.println("10. Borrar Prestamo");
-                    System.out.println("11. Mostrar Prestamos Finalizados");
-                    System.out.println("12. Mostrar Prestamos No Finalizados");
+                    System.out.println("1. Añadir Prestamo");
+                    System.out.println("2. Borrar Prestamo");
+                    System.out.println("3. Mostrar Prestamos Finalizados");
+                    System.out.println("4. Mostrar Prestamos No Finalizados");
                     System.out.println("Selecciona una opcion: ");
                     opcion = sc.nextInt();
 
